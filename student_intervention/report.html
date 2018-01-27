@@ -11875,7 +11875,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calcule o número de estudantes</span>
@@ -11891,7 +11891,7 @@ div#notebook {
 <span class="n">n_failed</span> <span class="o">=</span> <span class="n">n_students</span><span class="o">-</span><span class="n">n_passed</span>
 
 <span class="c1"># TODO: Calcule a taxa de graduação</span>
-<span class="n">grad_rate</span> <span class="o">=</span> <span class="n">n_passed</span><span class="o">*</span><span class="mi">100</span><span class="o">//</span><span class="n">n_students</span>
+<span class="n">grad_rate</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">n_passed</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">n_students</span>
 
 <span class="c1"># Imprima os resultados</span>
 <span class="k">print</span> <span class="s2">&quot;Número total de estudantes: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_students</span><span class="p">)</span>
@@ -11919,7 +11919,7 @@ div#notebook {
 Número de atributos: 30
 Número de estudantes aprovados: 265
 Número de estudantes reprovados: 130
-Taxa de graduação: 67.00%
+Taxa de graduação: 67.09%
 </pre>
 </div>
 </div>
@@ -12239,7 +12239,7 @@ O conjunto de teste tem 95 amostras.
 <ul>
 <li>Assume que os atributos são totalmente independentes entre si, por isso dado sua atribuição de "ingênuo"</li>
 </ul>
-<p>O algoritmo de inferência Bayesiana atende os requisitos propostos para o problema, assim foi escolhido como candidato para a solução.</p>
+<p>O algoritmo de inferência Bayesiana atende os requisitos propostos para o problema, pois é um modelo simples, e que possui boa eficácia nos dados de entrada(que possui 30 atributos), e que por fim, possui uma qualidade única entre os modelos escolhidos, que permite a realização de treinamentos incrementais, resultando em menos tempo e recursos utilizados para o treinamento.</p>
 
 </div>
 </div>
@@ -12682,8 +12682,10 @@ Pontuação F1 para o conjunto de teste: 0.8400.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>O modelo de Support Vector Machine é um algoritmo de aprendizado de máquina capaz de classificar dados. Para realizar esta classificação ele dispõe os dados em um espaço, de acordo com seus atributos, e depois separa o espaço com cortes, de forma a enquadrar a maior parte dos dados de cada classificação em um espaço. Ele realiza esta operação várias vezes, e depois analisa qual foi o "melhor corte", analisando a distância entre o corte e os pontos que foram separados.</p>
-<p>Caso os dados não consigam ser separados por um corte na forma atual que os dados foram dispostos, o algoritmo realiza um reposicionamento dos objetos, e tenta novamente realizar uma nova separação.Após esta iteração, as predições são realizadas com base em qual espaço os novos pontos se encontram ao serem adicionados.</p>
+<h2 id="Explica&#231;&#227;o-para-leigos-do-ambiente-de-trabalho">Explica&#231;&#227;o para leigos do ambiente de trabalho<a class="anchor-link" href="#Explica&#231;&#227;o-para-leigos-do-ambiente-de-trabalho">&#182;</a></h2><p>O modelo <a href="http://scikit-learn.org/stable/modules/svm.html">Support Vector Machine</a> é um algoritmo de aprendizado de máquina capaz de classificar dados entre duas classes, ou seja, uma máquina irá aprender, através de dados que forneceremos a ela, como separar um conjunto de objetos em duas pilhas.</p>
+<p>Para realizar esta classificação, imagine que os elementos estejam dispostos em um tabuleiro de xadrez, tendo suas posições representadas por seus atributos, e após essa disposição, a máquina tentará separar os elementos dispostos da melhor maneira possível tracejando uma linha reta no tabuleiro, definindo que os elementos de um lado da linha pertencem a um grupo e os elementos do outro lado a outro grupo.</p>
+<p>Caso os dados não consigam ser separados satisfatóriamente por uma linha reta na forma atual que os elementos foram dispostos, o algoritmo realiza um reposicionamento dos objetos, representando os atributos de uma forma diferente, e tenta novamente realizar a separação dos elementos.</p>
+<p>No exemplo do tabuleiro, reposicionaríamos os elementos em um tabuleiro de <a href="https://en.wikipedia.org/wiki/Three-dimensional_chess">xadrez tridimensional</a>, onde a máquina teria uma nova disposição para realizar a separação. Como os elementos estão dispostos em três dimensões , a máquina, em vez de separar os elementos com uma linha, utilizaria uma folha de papel(sem dobrar) para separar os elementos, talvez até determinando que a separação ótima seja que cada grupo ocupe um tabuleiro diferente, neste caso a folha ficaria exatamente entre os tabuleiros.</p>
 
 </div>
 </div>
