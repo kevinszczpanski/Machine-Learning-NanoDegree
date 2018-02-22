@@ -1,13 +1,39 @@
 # Machine Learning Engineer Nanodegree
-## Capstone Proposal
-Joe Udacity  
-December 31st, 2050
+## Proposta do projeto de conclusão
+Leandro Humberto Vieira
 
-## Proposal
-_(approx. 2-3 pages)_
+## Aplicação de machine learning e visão computacional na extração de informação visual de mulheres
 
-### Domain Background
-_(approx. 1-2 paragraphs)_
+### Descrição do domínio
+
+  A imagem é a primeira impressão que uma pessoa tem ao ver alguém, é algo que nosso cérebro faz automaticamente para armazenar informações e vai sendo completado a partir do momento em que começamos a interagir com esta pessoa. Uma imagem diferente do que uma pessoa é durante uma conversa causa um "ruído" na comunicação e uma confusão no nosso cérebro. A imagem é o cartão de visitas de qualquer pessoa. Há uma série de informações que são passadas de forma não-verbal no jeito que alguém se veste.
+ 
+ Hoje a imagem é uma via de comunicação pessoal tão importante quanto a fala, dessa forma surgiu a necessidade de profissionais que ensinam a arte da comunicação não-verbal, através de métodos e análises que permitem ensinar uma pessoa a se conhecer e, assim, expressar melhor seu estilo e personalidade através de sua imagem.
+  O processo de consultoria de imagem ensina a pessoa a identificar seu estilo e sua personalidade, e após este passo, trabalhar com o objetivo de construir uma imagem pessoal mais positiva e coerente com a cliente.
+### Por que a consultoria de imagem é importante
+
+Os resultados da consultoria de imagem causam diversos impactos positivos na vida da cliente, como:
+
+* Melhorias na autoestima
+* Melhoria na vida profissional
+* Melhoras no relacionamento
+* Economia financeira
+
+### O problema da consultoria de imagem
+
+Para realizar o processo de consultoria de imagem, é necessário o consultor realizar uma série de análises classificatórias, realizando uma análise da cliente, presencialmente ou online(através de fotos). Dentre essas análises temos como elementos chaves:
+
+* [Análise de biotipo](https://www.imageconsultantstraining.com/the-simple-guide-to-dressing-your-body-shape)
+* Análise de formato de rosto
+* Análise do tom e subtom de pele
+* Análise de coloração
+
+  
+
+
+
+A consultoria reúne a experiência de vida, os hábitos relacionados a compras, e vestimentas.
+A consultoria de imagem e estilo é uma área profissional da moda que trabalha com a imagem pessoal através do auto conhecimento, visando aumentar a autoestima e criar uma autoimagem positiva.
 
 In this section, provide brief details on the background information of the domain from which the project is proposed. Historical information relevant to the project should be included. It should be clear how or why a problem in the domain can or should be solved. Related academic research should be appropriately cited in this section, including why that research is relevant. Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
 
