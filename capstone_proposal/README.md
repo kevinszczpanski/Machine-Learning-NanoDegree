@@ -28,9 +28,10 @@ Para realizar o processo de consultoria de imagem, é necessário o consultor re
 * Análise do tom e subtom de pele
 * Análise de coloração
 
-Optei por este desafio pois minha esposa é consultora de imagem há 1 ano e desejo fortemente poder ajudá-la utilizando todo o potencial das técnicas de Business Intelligence, Big Data e Machine Learning para automatizar o possível de seu trabalho em primeira instância e em seguida, dar a ela vantagem competitiva. Sabemos que um cientista de dados é um recurso muito escasso e caro, o que torna ele inacessível para pequenos e médios negócios, assim tenho certeza que com minha ajuda, minha esposa terá uma grande vantagem.
-  
+Optei por este desafio pois minha esposa é consultora de imagem há 1 ano e desejo fortemente ajudá-la utilizando todo o potencial das técnicas de Business Intelligence, Big Data e Machine Learning para avançar o negócio dela nos seguintes pontos:
 
+* Aumentar sua produtividade, automatizando as análises realizadas com técnicas de classificação e visão computacional
+* Extrair dados do instagram e transformá-los em informação necessária para a tomada de decisão
 
 
 A consultoria reúne a experiência de vida, os hábitos relacionados a compras, e vestimentas.
@@ -43,27 +44,31 @@ _(approx. 1 paragraph)_
 
 In this section, clearly describe the problem that is to be solved. The problem described should be well defined and should have at least one relevant potential solution. Additionally, describe the problem thoroughly such that it is clear that the problem is quantifiable (the problem can be expressed in mathematical or logical terms) , measurable (the problem can be measured by some metric and clearly observed), and replicable (the problem can be reproduced and occurs more than once).
 
-### Datasets and Inputs
+### Dados de entrada
 _(approx. 2-3 paragraphs)_
+
+Os dados de entrada foram buscados entre vários repositórios que são referenciados no [FACE RECOGNITION HOMEPAGE](http://www.face-rec.org/databases/). Busquei fotos de mulheres entre as bases de dados, selecionando apenas os dados de fotos que aparentavam ter uma qualidade melhor.
+
+
 
 In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
 
-### Solution Statement
+### Descrição da solução
 _(approx. 1 paragraph)_
 
 In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
 
-### Benchmark Model
+### Modelo de comparação
 _(approximately 1-2 paragraphs)_
 
 In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution. Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
 
-### Evaluation Metrics
+### Métrica de validação
 _(approx. 1-2 paragraphs)_
 
 In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
 
-### Project Design
+### Design do projeto
 _(approx. 1 page)_
 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
