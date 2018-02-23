@@ -28,6 +28,7 @@ Para realizar o processo de consultoria de imagem, é necessário o consultor re
 * Análise do tom e subtom de pele
 * Análise de coloração
 
+Optei por este desafio pois minha esposa é consultora de imagem há 1 ano e desejo fortemente poder ajudá-la utilizando todo o potencial das técnicas de Business Intelligence, Big Data e Machine Learning para automatizar o possível de seu trabalho em primeira instância e em seguida, dar a ela vantagem competitiva. Sabemos que um cientista de dados é um recurso muito escasso e caro, o que torna ele inacessível para pequenos e médios negócios, assim tenho certeza que com minha ajuda, minha esposa terá uma grande vantagem.
   
 
 
