@@ -15,7 +15,7 @@ Leandro Humberto Vieira
 
 A imagem, o estilo e as vestimentas sao fatores que regem ou influenciam vários aspectos da vida de uma pessoa, o que torna esta informação muito valiosa e digna de vários estudos como os descritos abaixo:
 
-* [Como a roupa afeta sua consciência](http://www.dailymail.co.uk/sciencetech/article-2644076/You-DRESS-Clothing-significant-effect-self-esteem-confidence-claims-expert.html) Livro:https://www.amazon.com/Mind-What-You-Wear-Psychology-ebook/dp/B00KBTB3NS/ref=sr_1_1?ie=UTF8&qid=1454635783&sr=8-1&keywords=Mind+What+You+Wear
+* [Como a roupa afeta sua consciência](http://www.dailymail.co.uk/sciencetech/article-2644076/You-DRESS-Clothing-significant-effect-self-esteem-confidence-claims-expert.html) - [Livro descrito no artigo](https://www.amazon.com/Mind-What-You-Wear-Psychology-ebook/dp/B00KBTB3NS/ref=sr_1_1?ie=UTF8&qid=1454635783&sr=8-1&keywords=Mind+What+You+Wear)
 
 * [Como a roupa impacta no seu sucesso profissional](http://www.businessinsider.com/how-your-clothing-impacts-your-success-2014-8)
 * [A correlação da vestimenta com o relacionamento](https://www.meetmindful.com/the-way-you-dress/)
@@ -28,17 +28,12 @@ A imagem, o estilo e as vestimentas sao fatores que regem ou influenciam vários
 O problema a ser resolvido se define em como ter uma visão estratégica do armário de uma mulher. Apenas olhando para o armário, por mais organizado que esteja, não é possível responder perguntas como:
 
 * Quantas blusas pretas eu tenho?
-* Quais são as peças que faltam no armário?
+* Quais são as peças essenciais que faltam no armário?
 * Qual a proporção casual/trabalho que tenho?
 
 
 
-
-
-In this section, clearly describe the problem that is to be solved. The problem described should be well defined and should have at least one relevant potential solution. Additionally, describe the problem thoroughly such that it is clear that the problem is quantifiable (the problem can be expressed in mathematical or logical terms) , measurable (the problem can be measured by some metric and clearly observed), and replicable (the problem can be reproduced and occurs more than once).
-
 ### Dados de entrada
-_(approx. 2-3 paragraphs)_
 
 Os dados de entrada foram pesquisados na internet e dois candidatos possuem um excelente encaixe na solução: 
 
@@ -48,29 +43,27 @@ Os dados de entrada foram pesquisados na internet e dois candidatos possuem um e
 
 ## [Apparel classification with Style](http://www.vision.ee.ethz.ch/~lbossard/projects/accv12/index.html)
 
-  O Apparel classification Set contém imagens retiradas da web através de crawlers e já classificadas em 15 grupos diferentes de categorias de roupa. Os dados deste conjunto são muito mais semelhantes com a realidade da aplicação final, pois mostram as roupas vestidas em pessoas em lugares naturais.
-
-
-
-In this section, the dataset(s) and/or input(s) being considered for the project should be thoroughly described, such as how they relate to the problem and why they should be used. Information such as how the dataset or input is (was) obtained, and the characteristics of the dataset or input, should be included with relevant references and citations as necessary It should be clear how the dataset(s) or input(s) will be used in the project and whether their use is appropriate given the context of the problem.
-
+  O Apparel Classification Set contém imagens retiradas da web através de crawlers e já classificadas em 15 grupos diferentes de categorias de roupa. Os dados deste conjunto são mais semelhantes com a realidade da aplicação final, pois mostram as roupas vestidas em pessoas em lugares naturais.
+  
 ### Descrição da solução
 
-A solução envolve a construção de um aplicativo mobile que permitirá uma pessoa gerenciar seu armário com mais facilidade, através da construção de um "armário virtual". O processo consiste de um cadastro inicial, indicando a quantidade de peças que a pessoa possui no armário. Após isso o aplicativo iniciará como um armário vazio, e ele será preenchido organicamente pela cliente, através de fotos com o "look do dia". Com as fotos, é o trabalho da solução classificar as roupas utilizadas nas fotos e adicioná-las ao armário virtual, com o devido cuidado de não criar a peça duplicadamente no armário.
-  Com a geração destes dados classificados, utilizá-los para mostrar estatísticas descritivas e prescritivas do armário para a cliente.
+  A solução envolve a construção de um aplicativo mobile que permitirá uma pessoa gerenciar seu armário com mais facilidade, através da construção de um "armário virtual". O processo consiste de um cadastro inicial, indicando a quantidade de peças que a pessoa possui no armário. Após isso o aplicativo iniciará como um armário vazio, e ele será preenchido organicamente pela cliente, através de fotos com o "look do dia". Com as fotos, é o trabalho da solução classificar as roupas utilizadas nas fotos e adicioná-las ao armário virtual, com o devido cuidado de não criar a peça duplicadamente no armário.
+  
+  Com a geração destes dados classificados,eles serão utilizá-los para mostrar estatísticas descritivas e prescritivas do armário para a cliente.
 
 ### Modelo de comparação
-_(approximately 1-2 paragraphs)_
 
-In this section, provide the details for a benchmark model or result that relates to the domain, problem statement, and intended solution. Ideally, the benchmark model or result contextualizes existing methods or known information in the domain and problem given, which could then be objectively compared to the solution. Describe how the benchmark model or result is measurable (can be measured by some metric and clearly observed) with thorough detail.
+  Assim como descrito na [publicação do ACS](http://www.vision.ee.ethz.ch/~lbossard/projects/accv12/accv12_apparel-classification-with-style.pdf) o modelo a ser construído será comparado com abordagens simples dos algoritmos de classificação [random forest](https://en.wikipedia.org/wiki/Random_forest) e [Support Vector Machines](https://en.wikipedia.org/wiki/Support_vector_machine), para definir o baseline de performance a ser atingido pelo algoritmo de deep learning.
 
 ### Métrica de validação
-_(approx. 1-2 paragraphs)_
 
-In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
+A métrica de validação a ser utilizada pelo modelo será inicialmente a [acurácia](https://en.wikipedia.org/wiki/Accuracy_and_precision), seguida do [recall](https://en.wikipedia.org/wiki/Precision_and_recall#Recall). E por fim, o score final a ser utilizado devem ser alguma pontuação F1, com o leve viés para o recall.
 
+  O modelo a ser construído é um modelo de alto recall, pois em caso de um potencial falso positivo, podemos simplesmente pedir ao usuário que realize a desambiguação com uma resposta de sim ou não, ao invés do falso negativo, que irá cadastrar uma roupa duplicada no armário e que deverá seguir um fluxo alternativo e mais complexo de desambiguação.
+  
 ### Design do projeto
-_(approx. 1 page)_
+
+
 
 In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
 
