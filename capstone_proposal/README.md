@@ -31,48 +31,54 @@ O problema a ser resolvido se define em como ter uma visão estratégica do arm�
 * Quais são as peças essenciais que faltam no armário?
 * Qual a proporção casual/trabalho que tenho?
 
-
-
 ### Dados de entrada
 
 Os dados de entrada foram pesquisados na internet e dois candidatos possuem um excelente encaixe na solução: 
 
-## [Fashion MNIST](https://github.com/zalandoresearch/fashion-mnist)
+### [Fashion MNIST](https://github.com/zalandoresearch/fashion-mnist)
 
   O Fashion MNIST é um conjunto de dados criado pela [Zalando Research](https://research.zalando.com/), que contém 60 mil imagens de roupas no conjunto de treino e outras 10 mil no conjunto de teste. Este conjunto de dados tem como objetivo principal substituir o [MNIST](http://yann.lecun.com/exdb/mnist/), pois o mesmo é um conjunto que [não condiz com a realidade dos problemas de Deep Learning](https://twitter.com/fchollet/status/852592598128615424)
 
-## [Apparel classification with Style](http://www.vision.ee.ethz.ch/~lbossard/projects/accv12/index.html)
+### [Apparel classification with Style](http://www.vision.ee.ethz.ch/~lbossard/projects/accv12/index.html)
 
   O Apparel Classification Set contém imagens retiradas da web através de crawlers e já classificadas em 15 grupos diferentes de categorias de roupa. Os dados deste conjunto são mais semelhantes com a realidade da aplicação final, pois mostram as roupas vestidas em pessoas em lugares naturais.
   
 ### Descrição da solução
 
-  A solução envolve a construção de um aplicativo mobile que permitirá uma pessoa gerenciar seu armário com mais facilidade, através da construção de um "armário virtual". O processo consiste de um cadastro inicial, indicando a quantidade de peças que a pessoa possui no armário. Após isso o aplicativo iniciará como um armário vazio, e ele será preenchido organicamente pela cliente, através de fotos com o "look do dia". Com as fotos, é o trabalho da solução classificar as roupas utilizadas nas fotos e adicioná-las ao armário virtual, com o devido cuidado de não criar a peça duplicadamente no armário.
+  A solução envolve a construção de um aplicativo mobile que permitirá uma pessoa gerenciar seu armário com mais facilidade, através da construção de um "armário virtual". O processo consiste de um cadastro inicial, indicando a quantidade de peças que a pessoa possui no armário. Após isso o aplicativo iniciará como um armário vazio, e ele será preenchido organicamente pela cliente, através de fotos com o ["look do dia"](https://www.instagram.com/p/BfoDmWrnYLb/?hl=pt-br&taken-by=karinataniaconsultoria). Com as fotos, é o trabalho da solução classificar as roupas utilizadas nas fotos e adicioná-las ao armário virtual, com o devido cuidado de não criar a peça duplicadamente no armário.
   
-  Com a geração destes dados classificados,eles serão utilizá-los para mostrar estatísticas descritivas e prescritivas do armário para a cliente.
+  Com a geração destes dados classificados,eles serão utilizá-los para mostrar estatísticas descritivas do armário para a cliente.
 
 ### Modelo de comparação
 
   Assim como descrito na [publicação do ACS](http://www.vision.ee.ethz.ch/~lbossard/projects/accv12/accv12_apparel-classification-with-style.pdf) o modelo a ser construído será comparado com abordagens simples dos algoritmos de classificação [random forest](https://en.wikipedia.org/wiki/Random_forest) e [Support Vector Machines](https://en.wikipedia.org/wiki/Support_vector_machine), para definir o baseline de performance a ser atingido pelo algoritmo de deep learning.
+  
+  Por interesse pessoal, e devido à grande visibilidade da área recentemente, também incluírei como modelo de comparação, um classificador gerado atravé de [AutoML](https://automl.info/), utilizando a biblioteca [TPOT](http://epistasislab.github.io/tpot/). Auto Machine Learning tem sido experimentado e observado por gigantes da indústria de TI como [Google](https://cloud.google.com/automl/) e [Microsoft](https://www.microsoft.com/en-us/research/blog/automl-challenge-leap-forward-machine-learning-competitions/), então considero isto uma boa adição ao meu projeto.  
 
 ### Métrica de validação
 
-A métrica de validação a ser utilizada pelo modelo será inicialmente a [acurácia](https://en.wikipedia.org/wiki/Accuracy_and_precision), seguida do [recall](https://en.wikipedia.org/wiki/Precision_and_recall#Recall). E por fim, o score final a ser utilizado devem ser alguma pontuação F1, com o leve viés para o recall.
+A métrica de validação a ser utilizada pelo modelo será a [acurácia](https://en.wikipedia.org/wiki/Accuracy_and_precision).
 
-  O modelo a ser construído é um modelo de alto recall, pois em caso de um potencial falso positivo, podemos simplesmente pedir ao usuário que realize a desambiguação com uma resposta de sim ou não, ao invés do falso negativo, que irá cadastrar uma roupa duplicada no armário e que deverá seguir um fluxo alternativo e mais complexo de desambiguação.
+O processo de validação das métricas será dividido nas etapas abaixo:
+
+* Criação de 3 modelos de machine learning utilizados para comparação: SVM, Random Forest e TPOT(AutoML)
+* Criação de uma [rede neural convolucional](https://pt.wikipedia.org/wiki/Rede_neural_convolucional)
+* Treinamento e validação dos modelos
+* Comparação da acurácia entre os modelos
   
 ### Design do projeto
 
+Juntando todas as peças mencionadas anteriormente, temos o workflow de projeto abaixo:
 
-
-In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
-
------------
-
-**Before submitting your proposal, ask yourself. . .**
-
-- Does the proposal you have written follow a well-organized structure similar to that of the project template?
-- Is each section (particularly **Solution Statement** and **Project Design**) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-- Would the intended audience of your project be able to understand your proposal?
-- Have you properly proofread your proposal to assure there are minimal grammatical and spelling mistakes?
-- Are all the resources used for this project correctly cited and referenced?
+#### 1. Entrada de dados
+  Os dados serão inputados através de uma aplicação mobile, construída em [Flutter](https://flutter.io/), que terá uma interface para upload de fotos da galeria do dispositivo. A aplicação será a mais simples possível, pois não é o foco deste projeto
+#### 2. Transporte de dados
+  A foto que foi escolhida para a análise não será analisada no dispositivo, logo é necessário realizar o transporte dos dados para o servidor de análise. Este transporte será realizado através de uma requisição http.
+#### 3. Recepção dos dados
+  Para receber os dados através da requisição, será construído um simples servidor RESTful, através da biblioteca [Flask](http://flask.pocoo.org/), o servidor irá fazer o papel de receber os arquivos e realizar as operações básicas de controle de sessão e chamada do algoritmo de classificação.
+#### 4. Pré processamento dos dados
+  Para realizar a classificação de um look, serão necessárias classificações distintas para cada peça de roupa que o compõe, para isso, considero utilizar como abordagem recortar a foto do look e extrair cada peça dele, para assim realizar a classificação utilizando apenas parte da imagem que contém a peça em questão
+#### 5. Análise dos dados
+  Após a separação das peças de roupa em uma imagem, aplicar para cada uma separadamente a CNN de classificação, e retornar o resultado para a aplicação cliente
+#### 6. Resultado final
+  Após a aplicação cliente receber o resultado na análise, será mostrado o recorte da peça para o usuário da aplicação, junto com o resultado da CNN, caso o resultado da CNN tenha um baixo grau de confiança, o usuário poderá alterar o resultado da CNN com um ajuste manual
