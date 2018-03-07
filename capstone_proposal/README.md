@@ -33,17 +33,37 @@ O problema a ser resolvido se define em como ter uma visão estratégica do arm�
 * Quais são as peças essenciais que faltam no armário?
 * Qual a proporção casual/trabalho que tenho?
 
+Para responder tais perguntas, é necessário classificar as roupas entre os tipos básicos de vestimenta. De acordo com a Karina Tânia Consultoria, uma boa separação do armário consiste em agrupar as roupas de acordo com os 10 grupos abaixo:
+
+1. Lingeries
+2. Acessórios
+3. Bolsas e sapatos
+4. Blusas
+5. Terceira peça
+6. Calças
+7. Shorts
+8. Saias
+9. Vestidos/Macacões/Macaquinhos
+10. Roupas de Academia
+
+
+Para classificar as roupas, deve-se observar em qual categoria ela pertence, através de sua forma básica. Para realizar esta classificação, a forma mais fácil de obter esta informação é através da imagem, devido a riqueza de detalhe que uma única peça de roupa pode conter.
+
 ### Dados de entrada
 
 Os dados de entrada foram pesquisados na internet e dois candidatos possuem um excelente encaixe na solução: 
 
 ### [Fashion MNIST](https://github.com/zalandoresearch/fashion-mnist)
 
+![Fashion MNIST_demo](https://github.com/leandrohmvieira/Machine-Learning-NanoDegree/blob/master/capstone_proposal/images/FMNIST.jpeg)
+
   O Fashion MNIST é um conjunto de dados criado pela [Zalando Research](https://research.zalando.com/), que contém 60 mil imagens de roupas no conjunto de treino e outras 10 mil no conjunto de teste. Este conjunto de dados tem como objetivo principal substituir o [MNIST](http://yann.lecun.com/exdb/mnist/), pois o mesmo é um conjunto que [não condiz com a realidade dos problemas de Deep Learning](https://twitter.com/fchollet/status/852592598128615424)
 
 ### [Apparel classification with Style](http://www.vision.ee.ethz.ch/~lbossard/projects/accv12/index.html)
 
-  O Apparel Classification Set contém imagens retiradas da web através de crawlers e já classificadas em 15 grupos diferentes de categorias de roupa. Os dados deste conjunto são mais semelhantes com a realidade da aplicação final, pois mostram as roupas vestidas em pessoas em lugares naturais, porém contém uma série de ruídos nos dados, como fotos de caixas e fotos com zoom demais.
+![ACS_demo](https://github.com/leandrohmvieira/Machine-Learning-NanoDegree/blob/master/capstone_proposal/images/ACS%20Classification.png)
+
+  O Apparel Classification Set contém **80 mil imagens coloridas** retiradas da web através de crawlers e já classificadas em 15 grupos diferentes de categorias de roupa. Os dados deste conjunto são mais semelhantes com a realidade da aplicação final, pois mostram as roupas vestidas em pessoas em lugares naturais, porém contém uma série de ruídos nos dados, como fotos de caixas e fotos com zoom demais.
   
   Talvez como solução final, o modelo seja treinado com uma subseleção dos dados do ACS, que contenham as fotos que mais se assemelham ao propósito da aplicação.
   
